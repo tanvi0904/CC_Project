@@ -31,6 +31,6 @@ jobs:
           switches: -avzr --delete
           path: ./*
           remote_path: /var/www/todo/
-          remote_host: ec2-54-218-8-12.us-west-2.compute.amazonaws.com
+          remote_host: ec2-54-189-145-65.us-west-2.compute.amazonaws.com
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
