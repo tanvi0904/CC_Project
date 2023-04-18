@@ -52,7 +52,7 @@ function App() {
 
   const addTodo = text => {
     console.log(text);
-    Axios.post('http://localhost:3001/api/insert',{listname:text});
+    Axios.post('http://54.189.145.65:81/api/insert',{listname:text});
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
   };
@@ -60,7 +60,7 @@ function App() {
   const markTodo = index => {
     // console.log(index);
     const newTodos = [...todos];
-    Axios.post('http://localhost:3001/api/update',{listname:newTodos[index].text});
+    Axios.post('http://54.189.145.65:81/api/update',{listname:newTodos[index].text});
     console.log(newTodos[index].text);
     newTodos[index].isDone = true;
     setTodos(newTodos);
@@ -68,7 +68,7 @@ function App() {
 
   const removeTodo = index => {
     const newTodos = [...todos];
-    Axios.post('http://localhost:3001/api/remove',{listname:newTodos[index].text});
+    Axios.post('http://54.189.145.65:81/api/remove',{listname:newTodos[index].text});
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
