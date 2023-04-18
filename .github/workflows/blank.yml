@@ -22,9 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: npm ci
-      - run: npm run build
-
+      - run: npm --prefix /var/www/todo/frontend run ci
+      - run: npm --prefix /var/www/todo/frontend run build
+      
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
         with:
