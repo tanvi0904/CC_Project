@@ -10,12 +10,8 @@ const db=mysql.createPool({
     database: 'todocc'
 })
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors());
+app.use(cors({origin: '*'}));
 app.use(express.json());
 app.post("/api/insert",(req,res)=>{
     const sqlinsert="INSERT INTO todolist (listname,completion) VALUES (?,0)";
