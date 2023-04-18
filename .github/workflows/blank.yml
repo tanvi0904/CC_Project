@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: npm --prefix ./frontend run ci
+      - run: npm --prefix ./frontend ci
       - run: npm --prefix ./frontend run build
       
       - name: rsync deployments
