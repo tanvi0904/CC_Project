@@ -4,9 +4,9 @@ const app = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const db=mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
+    host: 'ccdatabase.c95irdynjpct.us-west-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'database',
     database: 'todocc'
 })
 
