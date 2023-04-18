@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Button, Card, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Axios from 'axios';
 
 function Todo({ todo, index, markTodo, removeTodo }) {
   return (
@@ -51,18 +51,24 @@ function App() {
   ]);
 
   const addTodo = text => {
+    console.log(text);
+    Axios.post('http://localhost:3001/api/insert',{listname:text});
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
   };
 
   const markTodo = index => {
+    // console.log(index);
     const newTodos = [...todos];
+    Axios.post('http://localhost:3001/api/update',{listname:newTodos[index].text});
+    console.log(newTodos[index].text);
     newTodos[index].isDone = true;
     setTodos(newTodos);
   };
 
   const removeTodo = index => {
     const newTodos = [...todos];
+    Axios.post('http://localhost:3001/api/remove',{listname:newTodos[index].text});
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
