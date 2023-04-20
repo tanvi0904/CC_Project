@@ -10,11 +10,18 @@ const db=mysql.createPool({
     database: 'CCdatabase'
 })
 
-app.use(bodyParser.urlencoded({extended:true}));
-const corsOptions = {
-  origin: 'http://54.189.145.65:81'
+export const handler = async (event) => {
+    const response = {
+        statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "http://54.189.145.65",
+            "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+        },
+        body: JSON.stringify('Hello from Lambda!'),
+    };
+    return response;
 };
-
 app.use(cors(corsOptions));
 app.use(express.json());
 app.post("/api/insert",(req,res)=>{
