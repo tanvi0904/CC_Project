@@ -11,7 +11,7 @@ const db=mysql.createPool({
 })
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(cors({origin: '*'}));
+app.use(cors());
 app.use(express.json());
 app.post("/api/insert",(req,res)=>{
     const sqlinsert="INSERT INTO todolist (listname,completion) VALUES (?,0)";
