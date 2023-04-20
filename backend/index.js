@@ -7,7 +7,7 @@ const db=mysql.createPool({
     host: 'ccdatabase.c95irdynjpct.us-west-2.rds.amazonaws.com',
     user: 'admin',
     password: 'database',
-    database: 'todocc'
+    database: 'CCdatabase'
 })
 
 app.use(bodyParser.urlencoded({extended:true}));
