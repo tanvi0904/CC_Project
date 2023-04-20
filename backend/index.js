@@ -9,13 +9,19 @@ const db = mysql.createPool({
   password: 'database',
   database: 'CCdatabase'
 });
-
-app.use(cors());
-app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
+
+const corsOptions = {
+  origin: 'http://54.189.145.65/',
+  methods: 'POST',
+  allowedHeaders: 'Content-Type'
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
 
 app.post('/api/insert', (req, res) => {
   const sqlinsert = 'INSERT INTO todolist (listname,completion) VALUES (?,0)';
