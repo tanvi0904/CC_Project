@@ -12,7 +12,7 @@ const db=mysql.createPool({
 
 app.use(bodyParser.urlencoded({extended:true}));
 const corsOptions = {
-  origin: 'http://54.189.145.65:81/api/insert'
+  origin: 'http://54.189.145.65:81'
 };
 
 app.use(cors(corsOptions));
