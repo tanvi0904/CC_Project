@@ -15,7 +15,7 @@ const corsOptions = {
   origin: 'http://54.189.145.65:81/api/insert'
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.post("/api/insert",(req,res)=>{
     const sqlinsert="INSERT INTO todolist (listname,completion) VALUES (?,0)";
