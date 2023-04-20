@@ -10,7 +10,7 @@ const db=mysql.createPool({
     database: 'CCdatabase'
 })
 const corsOptions = {
-  origin: '54.189.145.65:*',
+  origin: 'http://54.189.145.65:*',
   methods: ['OPTIONS', 'POST', 'GET'],
   allowedHeaders: ['Content-Type']
 };
