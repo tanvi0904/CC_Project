@@ -16,19 +16,19 @@ app.use(express.json());
 app.post("/api/insert",(req,res)=>{
     const sqlinsert="INSERT INTO todolist (listname,completion) VALUES (?,0)";
     db.query(sqlinsert,[req.body.listname],(err,result)=>{
-        console.log(result);
+        console.log(req.body.listname);
     });
 });
 app.post("/api/update",(req,res)=>{
     const sqlupd="UPDATE todolist SET completion=1 WHERE listname=?";
     db.query(sqlupd,[req.body.listname],(err,result)=>{
-        console.log(result);
+        console.log(req.body.listname);
     });
 });
 app.post("/api/remove",(req,res)=>{
     const sqlupd="DELETE from todolist WHERE listname=?";
     db.query(sqlupd,[req.body.listname],(err,result)=>{
-        console.log(result);
+        console.log(req.body.listname);
     });
 });
 
